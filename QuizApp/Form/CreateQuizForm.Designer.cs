@@ -34,7 +34,7 @@ partial class CreateQuizForm
         BackBtn = new System.Windows.Forms.Button();
         TypeCB = new System.Windows.Forms.ComboBox();
         QuestionContentLbl = new System.Windows.Forms.Label();
-        CreateQuestionTB = new System.Windows.Forms.TextBox();
+        QuestionContentTB = new System.Windows.Forms.TextBox();
         CorrectAnswerLbl = new System.Windows.Forms.Label();
         CorrectAnswerTB = new System.Windows.Forms.TextBox();
         ATB = new System.Windows.Forms.TextBox();
@@ -79,13 +79,13 @@ partial class CreateQuizForm
         QuestionContentLbl.TabIndex = 2;
         QuestionContentLbl.Text = "Content:";
         // 
-        // CreateQuestionTB
+        // QuestionContentTB
         // 
-        CreateQuestionTB.Location = new System.Drawing.Point(12, 147);
-        CreateQuestionTB.Multiline = true;
-        CreateQuestionTB.Name = "CreateQuestionTB";
-        CreateQuestionTB.Size = new System.Drawing.Size(475, 221);
-        CreateQuestionTB.TabIndex = 3;
+        QuestionContentTB.Location = new System.Drawing.Point(12, 147);
+        QuestionContentTB.Multiline = true;
+        QuestionContentTB.Name = "QuestionContentTB";
+        QuestionContentTB.Size = new System.Drawing.Size(475, 221);
+        QuestionContentTB.TabIndex = 3;
         // 
         // CorrectAnswerLbl
         // 
@@ -174,6 +174,7 @@ partial class CreateQuizForm
         AddBtn.TabIndex = 14;
         AddBtn.Text = "Add";
         AddBtn.UseVisualStyleBackColor = true;
+        AddBtn.Click += AddBtn_Click;
         // 
         // QuestionsLB
         // 
@@ -209,7 +210,7 @@ partial class CreateQuizForm
         Controls.Add(ATB);
         Controls.Add(CorrectAnswerTB);
         Controls.Add(CorrectAnswerLbl);
-        Controls.Add(CreateQuestionTB);
+        Controls.Add(QuestionContentTB);
         Controls.Add(QuestionContentLbl);
         Controls.Add(TypeCB);
         Controls.Add(BackBtn);
@@ -234,7 +235,7 @@ partial class CreateQuizForm
     private System.Windows.Forms.Label CLbl;
     private System.Windows.Forms.Label DLbl;
 
-    private System.Windows.Forms.TextBox CreateQuestionTB;
+    private System.Windows.Forms.TextBox QuestionContentTB;
 
     private System.Windows.Forms.Label QuestionContentLbl;
 
