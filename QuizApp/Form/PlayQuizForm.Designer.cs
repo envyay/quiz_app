@@ -1,14 +1,16 @@
-﻿namespace QuizApp;
+﻿using System.ComponentModel;
 
-partial class Form1
+namespace QuizApp;
+
+partial class PlayQuizForm
 {
     /// <summary>
-    ///  Required designer variable.
+    /// Required designer variable.
     /// </summary>
-    private System.ComponentModel.IContainer components = null;
+    private IContainer components = null;
 
     /// <summary>
-    ///  Clean up any resources being used.
+    /// Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
     protected override void Dispose(bool disposing)
@@ -29,16 +31,30 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
+        BackBtn = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
-        // Form1
+        // BackBtn
+        // 
+        BackBtn.Location = new System.Drawing.Point(12, 12);
+        BackBtn.Name = "BackBtn";
+        BackBtn.Size = new System.Drawing.Size(100, 28);
+        BackBtn.TabIndex = 0;
+        BackBtn.Text = "Back";
+        BackBtn.UseVisualStyleBackColor = true;
+        BackBtn.Click += BackBtn_Click;
+        // 
+        // PlayQuizForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
-        Text = "Form1";
+        Controls.Add(BackBtn);
+        Text = "PlayQuizForm";
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Button BackBtn;
 
     #endregion
 }
