@@ -48,6 +48,7 @@ partial class CreateQuizForm
         AddBtn = new System.Windows.Forms.Button();
         QuestionsLB = new System.Windows.Forms.ListBox();
         QuestionsLbl = new System.Windows.Forms.Label();
+        PlayBtn = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
         // BackBtn
@@ -192,11 +193,21 @@ partial class CreateQuizForm
         QuestionsLbl.TabIndex = 16;
         QuestionsLbl.Text = "Questions:";
         // 
+        // PlayBtn
+        // 
+        PlayBtn.Location = new System.Drawing.Point(586, 386);
+        PlayBtn.Name = "PlayBtn";
+        PlayBtn.Size = new System.Drawing.Size(100, 28);
+        PlayBtn.TabIndex = 17;
+        PlayBtn.Text = "Play Quiz";
+        PlayBtn.UseVisualStyleBackColor = true;
+        // 
         // CreateQuizForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(1048, 721);
+        ClientSize = new System.Drawing.Size(1065, 721);
+        Controls.Add(PlayBtn);
         Controls.Add(QuestionsLbl);
         Controls.Add(QuestionsLB);
         Controls.Add(AddBtn);
@@ -218,6 +229,8 @@ partial class CreateQuizForm
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Button PlayBtn;
 
     private System.Windows.Forms.Label QuestionsLbl;
 
