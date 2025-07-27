@@ -18,11 +18,4 @@ public partial class MainForm : Form
     {
         this.Close();
     }
-
-    private void PlayQuizBtn_Click(object sender, EventArgs e)
-    {
-        var playQuizForm = new PlayQuizForm();
-        playQuizForm.Show();
-        this.Hide();
-    }
 }

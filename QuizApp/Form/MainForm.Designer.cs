@@ -30,7 +30,6 @@ partial class MainForm
     private void InitializeComponent()
     {
         CreateQuizBtn = new System.Windows.Forms.Button();
-        PlayQuizBtn = new System.Windows.Forms.Button();
         CloseAppBtn = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
@@ -44,19 +43,9 @@ partial class MainForm
         CreateQuizBtn.UseVisualStyleBackColor = true;
         CreateQuizBtn.Click += CreateQuizBtn_Click;
         // 
-        // PlayQuizBtn
-        // 
-        PlayQuizBtn.Location = new System.Drawing.Point(66, 132);
-        PlayQuizBtn.Name = "PlayQuizBtn";
-        PlayQuizBtn.Size = new System.Drawing.Size(459, 30);
-        PlayQuizBtn.TabIndex = 1;
-        PlayQuizBtn.Text = "Play Quiz";
-        PlayQuizBtn.UseVisualStyleBackColor = true;
-        PlayQuizBtn.Click += PlayQuizBtn_Click;
-        // 
         // CloseAppBtn
         // 
-        CloseAppBtn.Location = new System.Drawing.Point(66, 168);
+        CloseAppBtn.Location = new System.Drawing.Point(66, 143);
         CloseAppBtn.Name = "CloseAppBtn";
         CloseAppBtn.Size = new System.Drawing.Size(459, 30);
         CloseAppBtn.TabIndex = 2;
@@ -70,13 +59,11 @@ partial class MainForm
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(590, 294);
         Controls.Add(CloseAppBtn);
-        Controls.Add(PlayQuizBtn);
         Controls.Add(CreateQuizBtn);
         Text = "Form1";
         ResumeLayout(false);
     }
 
-    private System.Windows.Forms.Button PlayQuizBtn;
     private System.Windows.Forms.Button CloseAppBtn;
 
     private System.Windows.Forms.Button CreateQuizBtn;

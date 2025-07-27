@@ -125,9 +125,16 @@ public partial class CreateQuizForm : Form
     {
         var exam = new Exam
         {
-            Name = DateTime.Now.ToShortDateString(),
+            Name = DateTime.Now.ToLongTimeString(),
         };
         var newExam = _examService.AddExam(exam);
         return newExam.Id;
+    }
+
+    private void PlayBtn_Click(object sender, EventArgs e)
+    {
+        var PlayForm = new PlayQuizForm(_examId);
+        PlayForm.Show();
+        this.Hide();
     }
 }

@@ -2,8 +2,10 @@
 
 public partial class PlayQuizForm : Form
 {
-    public PlayQuizForm()
+    private readonly int _examId;
+    public PlayQuizForm(int examId)
     {
+        _examId = examId;
         InitializeComponent();
     }
 

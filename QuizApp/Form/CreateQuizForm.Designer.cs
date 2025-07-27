@@ -201,6 +201,7 @@ partial class CreateQuizForm
         PlayBtn.TabIndex = 17;
         PlayBtn.Text = "Play Quiz";
         PlayBtn.UseVisualStyleBackColor = true;
+        PlayBtn.Click += PlayBtn_Click;
         // 
         // CreateQuizForm
         // 
