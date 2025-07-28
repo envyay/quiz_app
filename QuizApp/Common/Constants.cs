@@ -24,4 +24,19 @@ public class Constants
                 return 0;
         }
     }
+
+    public static string QuestionTypeName(int typeId)
+    {
+        switch (typeId)
+        {
+            case MULTIPLE_CHOICE:
+                return MULTIPLE_CHOICE_NAME;
+            case TRUE_FALSE:
+                return TRUE_FALSE_NAME;
+            case OPEN_ENDED:
+                return OPEN_ENDED_NAME;
+            default:
+                return "";
+        }
+    }
 }

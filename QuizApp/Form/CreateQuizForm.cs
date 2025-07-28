@@ -110,12 +110,23 @@ public partial class CreateQuizForm : Form
         };
 
         _questionService.Add(question);
+        
+        QuestionContentTB.Clear();
+        CorrectAnswerTB.Clear();
+        ATB.Clear();
+        BTB.Clear();
+        CTB.Clear();
+        DTB.Clear();
+        TypeCB.SelectedIndex = -1;
+
+        QuestionContentTB.Focus();
 
         GetQuestionsLB();
     }
 
     public void GetQuestionsLB()
     {
+        QuestionsLB.Items.Clear();
         var questions = _questionService.GetQuestionsByExamId(_examId).Select(x => x.ToString()).ToArray();
         QuestionsLB.Items.AddRange(questions);
     }

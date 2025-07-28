@@ -30,4 +30,10 @@ public class BaseRepository<TId, TModel> where TModel : Entity<TId>
         _context.SaveChanges();
         return entry.Entity;
     }
+
+    public void AddRange(IEnumerable<TModel> models)
+    {
+        _context.Set<TModel>().AddRange(models);
+        _context.SaveChanges();
+    }
 }
