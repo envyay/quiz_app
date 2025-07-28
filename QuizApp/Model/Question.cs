@@ -15,7 +15,7 @@ public class Question : Entity<int>
 
     public virtual Answer Answer { get; set; }
 
-    public string GetQuestionContent()
+    public string GetQuestionContent(bool isResult = false)
     {
         switch (Type)
         {
@@ -26,11 +26,15 @@ public class Question : Entity<int>
                        $"C. {C}{Environment.NewLine}" +
                        $"D. {D}{Environment.NewLine}";
             case Constants.TRUE_FALSE:
+                if (isResult)
+                {
+                    return $"{Content}{Environment.NewLine}";
+                }
                 return $"{Content}{Environment.NewLine}" +
                        $"True {Environment.NewLine}" +
                        $"False {Environment.NewLine}";
             case Constants.OPEN_ENDED:
-                return $"{Content}";
+                return $"{Content}{Environment.NewLine}";
             default:
                 return "";
         }

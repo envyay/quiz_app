@@ -76,6 +76,9 @@ public partial class PlayQuizForm : Form
     private void SubmitBtn_Click(object sender, EventArgs e)
     {
         _answerService.AddRange(_answers);
+        var resultForm = new ViewResult(_questions, _answers);
+        resultForm.Show();
+        this.Close();
     }
 
     private Answer[] MapQuestionToAnswer()
