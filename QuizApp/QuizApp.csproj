@@ -18,6 +18,9 @@
       <Compile Update="Form\ViewResult.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="Form\EditQuizForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

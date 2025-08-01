@@ -17,6 +17,16 @@ public class QuestionService
         _questionRepository.Add(question);
     }
 
+    public void Delete(int id)
+    {
+        _questionRepository.Delete(id);
+    }
+
+    public void Update(Question question)
+    {
+        _questionRepository.Update(question);
+    }
+
     public List<Question> GetQuestionsByExamId(int examId)
     {
         return _questionRepository.Where(x => x.ExamId == examId).ToList();

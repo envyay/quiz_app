@@ -10,7 +10,7 @@ public partial class CreateQuizForm : Form
     private readonly ExamService _examService;
     private readonly int _examId;
 
-    public CreateQuizForm()
+    public CreateQuizForm(int? examId = null)
     {
         _questionService = new QuestionService();
         _examService = new ExamService();
@@ -18,7 +18,8 @@ public partial class CreateQuizForm : Form
         InitializeComponent();
         HideABCD();
 
-        _examId = CreateExam();
+        _examId = examId ?? CreateExam();
+        GetQuestionsLB();
     }
 
     private void BackBtn_Click(object sender, EventArgs e)
@@ -147,5 +148,39 @@ public partial class CreateQuizForm : Form
         var PlayForm = new PlayQuizForm(_examId);
         PlayForm.Show();
         this.Hide();
+    }
+
+
+    private void EditBtn_Click(object sender, EventArgs e)
+    {
+        var EditForm = new EditQuizForm();
+        
+        int selectedIndex = QuestionsLB.SelectedIndex;
+        if (selectedIndex >= 0 && selectedIndex < QuestionsLB.Items.Count)
+        {
+            var selectedQuestion = _questionService.GetQuestionsByExamId(_examId)[selectedIndex];
+            EditForm.LoadQuestion(_examId, selectedQuestion);
+            EditForm.Show();
+            this.Close();
+        }
+        else
+        {
+            MessageBox.Show("Please select a question to edit.");
+        }
+    }
+
+    private void DeleteBtn_Click(object sender, EventArgs e)
+    {
+        int selectedIndex = QuestionsLB.SelectedIndex;
+        if (selectedIndex >= 0 && selectedIndex < QuestionsLB.Items.Count)
+        {
+            var question = _questionService.GetQuestionsByExamId(_examId)[selectedIndex];
+            _questionService.Delete(question.Id);
+            GetQuestionsLB();
+        }
+        else
+        {
+            MessageBox.Show("Please select a question to delete.");
+        }
     }
 }

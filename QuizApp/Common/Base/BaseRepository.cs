@@ -31,6 +31,25 @@ public class BaseRepository<TId, TModel> where TModel : Entity<TId>
         return entry.Entity;
     }
 
+    public TModel Delete(TId id)
+    {
+        var model = this.GetById(id);
+        if (model == null)
+        {
+            throw new KeyNotFoundException($"Entity with id {id} not found.");
+        }
+        var entry = _context.Set<TModel>().Remove(model);
+        _context.SaveChanges();
+        return entry.Entity;
+    }
+
+    public TModel Update(TModel model)
+    {
+        var entry = _context.Set<TModel>().Update(model);
+        _context.SaveChanges();
+        return entry.Entity;
+    }
+
     public void AddRange(IEnumerable<TModel> models)
     {
         _context.Set<TModel>().AddRange(models);

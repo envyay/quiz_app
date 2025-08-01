@@ -49,6 +49,8 @@ partial class CreateQuizForm
         QuestionsLB = new System.Windows.Forms.ListBox();
         QuestionsLbl = new System.Windows.Forms.Label();
         PlayBtn = new System.Windows.Forms.Button();
+        DeleteBtn = new System.Windows.Forms.Button();
+        EditBtn = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
         // BackBtn
@@ -195,7 +197,7 @@ partial class CreateQuizForm
         // 
         // PlayBtn
         // 
-        PlayBtn.Location = new System.Drawing.Point(586, 386);
+        PlayBtn.Location = new System.Drawing.Point(952, 386);
         PlayBtn.Name = "PlayBtn";
         PlayBtn.Size = new System.Drawing.Size(100, 28);
         PlayBtn.TabIndex = 17;
@@ -203,11 +205,33 @@ partial class CreateQuizForm
         PlayBtn.UseVisualStyleBackColor = true;
         PlayBtn.Click += PlayBtn_Click;
         // 
+        // DeleteBtn
+        // 
+        DeleteBtn.Location = new System.Drawing.Point(702, 386);
+        DeleteBtn.Name = "DeleteBtn";
+        DeleteBtn.Size = new System.Drawing.Size(97, 28);
+        DeleteBtn.TabIndex = 18;
+        DeleteBtn.Text = "Delete";
+        DeleteBtn.UseVisualStyleBackColor = true;
+        DeleteBtn.Click += DeleteBtn_Click;
+        // 
+        // EditBtn
+        // 
+        EditBtn.Location = new System.Drawing.Point(586, 386);
+        EditBtn.Name = "EditBtn";
+        EditBtn.Size = new System.Drawing.Size(100, 28);
+        EditBtn.TabIndex = 19;
+        EditBtn.Text = "Edit";
+        EditBtn.UseVisualStyleBackColor = true;
+        EditBtn.Click += EditBtn_Click;
+        // 
         // CreateQuizForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(1065, 721);
+        Controls.Add(EditBtn);
+        Controls.Add(DeleteBtn);
         Controls.Add(PlayBtn);
         Controls.Add(QuestionsLbl);
         Controls.Add(QuestionsLB);
@@ -230,6 +254,9 @@ partial class CreateQuizForm
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Button DeleteBtn;
+    private System.Windows.Forms.Button EditBtn;
 
     private System.Windows.Forms.Button PlayBtn;
 
