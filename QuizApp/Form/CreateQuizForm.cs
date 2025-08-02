@@ -88,6 +88,20 @@ public partial class CreateQuizForm : Form
 
     private void AddBtn_Click(object sender, EventArgs e)
     {
+        if (string.IsNullOrWhiteSpace(QuestionContentTB.Text) ||
+            string.IsNullOrWhiteSpace(CorrectAnswerTB.Text) ||
+            TypeCB.SelectedIndex == -1)
+        {
+            MessageBox.Show("Please fill in all required fields.");
+            return;
+        }
+        
+        if (ATB == null || BTB == null || CTB == null || DTB == null)
+        {
+            MessageBox.Show("Please fill in all options for multiple choice questions.");
+            return;
+        }
+        
         var typeName = TypeCB.SelectedItem?.ToString() ?? "";
         var type = Constants.QuestionType(typeName);
 

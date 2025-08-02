@@ -100,11 +100,13 @@ public partial class EditQuizForm : Form
                 HideABCD();
                 QuestionContentTB.Text = selectedQuestion.Content;
                 CorrectAnswerTB.Text = selectedQuestion.CorrectAnswer;
+                SaveBtn.Location = new Point(399, 234);
                 break;
             case Constants.OPEN_ENDED:
                 HideABCD();
                 QuestionContentTB.Text = selectedQuestion.Content;
                 CorrectAnswerTB.Text = selectedQuestion.CorrectAnswer;
+                SaveBtn.Location = new Point(399, 234);
                 break;
             default:
                 break;

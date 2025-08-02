@@ -60,7 +60,7 @@ partial class MainForm
         ClientSize = new System.Drawing.Size(590, 294);
         Controls.Add(CloseAppBtn);
         Controls.Add(CreateQuizBtn);
-        Text = "Form1";
+        Text = "Main Form";
         ResumeLayout(false);
     }
 
