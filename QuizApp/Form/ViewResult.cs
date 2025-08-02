@@ -4,8 +4,10 @@ namespace QuizApp;
 
 public partial class ViewResult : Form
 {
-    public ViewResult(Question[] questions, Answer[] answers)
+    private Label TimeLbl;
+    public ViewResult(Question[] questions, Answer[] answers, string time)
     {
+        
         InitializeComponent();
         var point = 0;
         var result = "";
@@ -31,6 +33,7 @@ public partial class ViewResult : Form
         PointLbl.Text = $"{point}/{questions.Length} points";
 
         ResultTb.Text = result;
+        ResultTb.Text += $"Time: {time}{Environment.NewLine}";
         ResultTb.ScrollBars = ScrollBars.Vertical;
     }
 

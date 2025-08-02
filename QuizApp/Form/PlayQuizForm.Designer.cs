@@ -40,6 +40,7 @@ partial class PlayQuizForm
         NextBtn = new System.Windows.Forms.Button();
         SubmitBtn = new System.Windows.Forms.Button();
         NoQuestionsLbl = new System.Windows.Forms.Label();
+        TimerLbl = new System.Windows.Forms.Label();
         SuspendLayout();
         // 
         // BackBtn
@@ -123,11 +124,21 @@ partial class PlayQuizForm
         NoQuestionsLbl.Text = "1/100";
         NoQuestionsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         // 
+        // TimerLbl
+        // 
+        TimerLbl.Font = new System.Drawing.Font("Segoe UI", 20F);
+        TimerLbl.Location = new System.Drawing.Point(404, 9);
+        TimerLbl.Name = "TimerLbl";
+        TimerLbl.Size = new System.Drawing.Size(122, 42);
+        TimerLbl.TabIndex = 9;
+        TimerLbl.Text = "00:00:00";
+        // 
         // PlayQuizForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(901, 557);
+        Controls.Add(TimerLbl);
         Controls.Add(NoQuestionsLbl);
         Controls.Add(SubmitBtn);
         Controls.Add(NextBtn);
@@ -141,6 +152,8 @@ partial class PlayQuizForm
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.Label TimerLbl;
 
     private System.Windows.Forms.Label NoQuestionsLbl;
 

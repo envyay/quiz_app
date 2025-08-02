@@ -10,10 +10,14 @@ public partial class PlayQuizForm : Form
     private readonly Question[] _questions;
     private readonly QuestionService _questionService;
     private readonly AnswerService _answerService;
+    private TimerService _timerService;
+    private System.Windows.Forms.Timer _timer;
     private readonly int _examId;
     private readonly Answer[] _answers;
+    
     public PlayQuizForm(int examId)
     {
+        _timerService = new TimerService();
         _questionService = new QuestionService();
         _answerService = new AnswerService();
         _examId = examId;
@@ -21,6 +25,12 @@ public partial class PlayQuizForm : Form
         _answers = MapQuestionToAnswer();
         
         InitializeComponent();
+        
+        _timerService.Start();
+        _timer = new System.Windows.Forms.Timer();
+        _timer.Interval = 1000;
+        _timer.Tick += OnTimerTick;
+        _timer.Start();
         
         UpdateQuestionUI();
     }
@@ -72,11 +82,14 @@ public partial class PlayQuizForm : Form
         var answer = _answers[_index];
         AnswerTb.Text = answer.Data;
     }
+    
 
     private void SubmitBtn_Click(object sender, EventArgs e)
     {
         _answerService.AddRange(_answers);
-        var resultForm = new ViewResult(_questions, _answers);
+        _timer.Stop();
+        var time = _timerService.FormatTimeSpan(_timerService.Stop());
+        var resultForm = new ViewResult(_questions, _answers, time);
         resultForm.Show();
         this.Close();
     }
@@ -92,5 +105,10 @@ public partial class PlayQuizForm : Form
         // Console.WriteLine(AnswerTb.Text);
         var answer = _answers[_index];
         answer.Data = AnswerTb.Text;
+    }
+    
+    private void OnTimerTick(object? sender, EventArgs e)
+    {
+        TimerLbl.Text = _timerService.FormatTimeSpan(_timerService.Elapsed());
     }
 }

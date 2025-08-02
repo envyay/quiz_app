@@ -1,6 +1,7 @@
 ﻿using QuizApp.Common;
 using QuizApp.Model;
 using QuizApp.Service;
+using Timer = System.Threading.Timer;
 
 namespace QuizApp;
 
@@ -14,7 +15,6 @@ public partial class CreateQuizForm : Form
     {
         _questionService = new QuestionService();
         _examService = new ExamService();
-
         InitializeComponent();
         HideABCD();
 
